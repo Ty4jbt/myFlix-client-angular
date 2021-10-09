@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+import { catchError } from 'rxjs/internal/operators';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 // Declaring the api url that will provide data for the client app
-const apiUrl = 'https://boemyflix.herokuapp.com/'
-
-const token = localStorage.getItem('token')
-const username = localStorage.getItem('user')
+const apiUrl = 'https://boemyflix.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ const username = localStorage.getItem('user')
 export class FetchDataApiService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient, private router: Router) {  }
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
@@ -170,10 +169,12 @@ export class FetchDataApiService {
         catchError(this.handleError)
       );
   }
+
   private extractResponseData(res: Response | Object): any {
     const body = res;
     return body || { };
   }
+  
   private handleError(error: HttpErrorResponse): any{
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
