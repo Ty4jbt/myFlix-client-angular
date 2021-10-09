@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+
 <mat-card>
+
     <mat-card-header>
         <mat-card-title>Login</mat-card-title>
     </mat-card-header>
@@ -7,7 +10,7 @@
             <mat-form-field>
                 <input
                     matInput
-                    [(ngModel)]='userData.username'
+                    [(ngModel)]='userDetails.username'
                     placeholder='Username'
                     type='text'
                     name='Username'
@@ -17,7 +20,7 @@
             <mat-form-field>
                 <input
                     matInput
-                    [(ngModel)]='userData.password'
+                    [(ngModel)]='userDetails.password'
                     placeholder='Password'
                     type='password'
                     name='Password'
