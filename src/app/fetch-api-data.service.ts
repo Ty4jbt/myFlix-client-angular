@@ -90,7 +90,7 @@ export class FetchDataApiService {
   }
 
   // Get user info
-  GetUser(): Observable<any> {
+  getUser(): Observable<any> {
     const token = localStorage.getItem('item');
     const user = localStorage.getItem('user');
     return this.http.get(apiUrl + `user/${user}`, {headers: new HttpHeaders(
@@ -103,7 +103,7 @@ export class FetchDataApiService {
   }
   
   // Edit user
-  EditUserInfo(userDetails: any): Observable<any> {
+  editUserInfo(userDetails: any): Observable<any> {
     const token = localStorage.getItem('item');
     const user = localStorage.getItem('user');
     console.log(userDetails);
@@ -117,7 +117,7 @@ export class FetchDataApiService {
   }
   
   // Delete user
-  Deleteuser(username: string): Observable<any> {
+  deleteuser(username: string): Observable<any> {
     const token = localStorage.getItem('item');
     const user = localStorage.getItem('user');
     return this.http.delete(apiUrl + `users/${user}`, {headers: new HttpHeaders(
@@ -158,7 +158,7 @@ export class FetchDataApiService {
   }
 
   // Delete Favorite movie
-  DeleteUserFavMovie(_id: string): Observable<any> {
+  deleteUserFavMovie(_id: string): Observable<any> {
     const token = localStorage.getItem('item');
     const user = localStorage.getItem('user');
     return this.http.delete(apiUrl + `users/${user}/movies/${_id}`, {headers: new HttpHeaders(
