@@ -6,8 +6,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
-import { FormControl } from '@angular/forms';
-
 import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
 
 @Component({

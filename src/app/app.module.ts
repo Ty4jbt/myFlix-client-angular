@@ -14,17 +14,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { FormsModule } from '@angular/forms';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
-import { MovieGenreComponent } from './movie-genre/movie-genre.component';
-import { ProfileViewComponent } from './profile-view/profile-view.component';
-import { MovieSummaryComponent } from './movie-summary/movie-summary.component';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
-import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { MovieGenreComponent } from './movie-genre/movie-genre.component';
+import { MovieSummaryComponent } from './movie-summary/movie-summary.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -48,18 +48,18 @@ const appRoutes: Routes = [
     NavbarComponent
   ],
   imports: [
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

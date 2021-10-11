@@ -28,11 +28,11 @@
 </h2>
 <hr>
 <div class="favorite-card-wrapper" style="display: flex;">
-    <mat-card *ngFor="let favorite of favorites;" class="favorite-card" style="flex: 1 1 auto;">
+    <mat-card *ngfor="let favorite of favorites;" class="favorite-card" style="flex: 1 1 auto;">
         <mat-card-title class="favorite-card-title">
             {{favorite.Title}}
         </mat-card-title>
-        <img height="200px" src={{favorite.ImagePath}} alt={{favorite.Title}} />
+        <img height="200px" src="{{favorite.ImagePath}}" alt="{{favorite.Title}}" />
         <div class="delete-favorite-button" (click)="removeFromFavorites(favorite._id, favorite.Title)">
             <mat-icon mat-button>delete_forever</mat-icon>
         </div>

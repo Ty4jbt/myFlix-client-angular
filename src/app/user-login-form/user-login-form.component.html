@@ -9,31 +9,31 @@
         <form>
             <mat-form-field>
                 <input
-                    matInput
-                    [(ngModel)]='userDetails.username'
-                    placeholder='Username'
-                    type='text'
-                    name='Username'
+                    matinput
+                    [(ngmodel)]="userDetails.username"
+                    placeholder="Username"
+                    type="text"
+                    name="Username"
                     required
                 />
             </mat-form-field>
             <mat-form-field>
                 <input
-                    matInput
-                    [(ngModel)]='userDetails.password'
-                    placeholder='Password'
-                    type='password'
-                    name='Password'
+                    matinput
+                    [(ngmodel)]="userDetails.password"
+                    placeholder="Password"
+                    type="password"
+                    name="Password"
                     required
                 />
             </mat-form-field>
         </form>
     </mat-card-content>
     <mat-card-actions>
-        <button
+        <button 
             mat-raised-button
-            (click)='loginUser()'
-            color='primary'
+            (click)="loginUser()"
+            color="primary"
         >
         Sign In
         </button>
