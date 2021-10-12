@@ -13,7 +13,7 @@ export class MovieSummaryComponent implements OnInit {
 
     public data: {
       title: string;
-      descripton: string;
+      description: string;
     }
   ) { }
 

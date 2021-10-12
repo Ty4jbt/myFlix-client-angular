@@ -13,6 +13,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule} from '@angular/material/toolbar';
 
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
@@ -60,6 +62,8 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

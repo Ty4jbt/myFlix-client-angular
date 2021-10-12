@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<app-nav-bar></app-nav-bar>
+<app-navbar></app-navbar>
 <div style="display: flex;">
     <mat-card *ngfor="let movie of movies;" style="flex: 1 1 auto;">
 
@@ -18,7 +18,7 @@
             <button mat-button color="primary" (click)="openSummaryViewDialog(movie.Title, movie.Description)">
                 Synopsis
             </button>
-            <button mat-button alt="Add movie to your favorites" (click)="addMovieToFavs(movie._id)">
+            <button mat-button alt="Add movie to your favorites" (click)="addMoviesToFavs(movie._id)">
                 <mat-icon>favorite_border
                 </mat-icon>
             </button>

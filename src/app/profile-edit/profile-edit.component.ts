@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProfileEditComponent implements OnInit {
 
-  @Input() userData = { UserName: '', Password: '', Email: '', Birthday: '' }
+  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' }
 
   constructor(
     public fetchApiData: FetchDataApiService,
@@ -26,7 +26,7 @@ export class ProfileEditComponent implements OnInit {
   updateUserData(): void {
     this.fetchApiData.editUserInfo(this.userData).subscribe((response) => {
       this.dialogRef.close();
-      localStorage.setItem('user', response.UserName);
+      localStorage.setItem('user', response.Username);
       this.snackBar.open('Profile deatails have been updated', 'OK', {
         duration: 2000,
       });
