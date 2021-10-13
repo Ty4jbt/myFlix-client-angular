@@ -30,14 +30,22 @@ export class MovieCardComponent implements OnInit {
       this.getUsersFavs();
     }
     
-    getMovies(): void {
-      this.fetchApiData.getAllMovies().subscribe((response: any) => {
-        this.movies = response;
+  /**
+   * fetches all movies from API
+   */
+  getMovies(): void {
+    this.fetchApiData.getAllMovies().subscribe((response: any) => {
+      this.movies = response;
       console.log(this.movies);
       return this.movies;
     });
   }
 
+  /**
+   * opens modal to view genre info
+   * @param genreName string of genre name
+   * @param genreDescription genre description
+   */
   openGenreViewDialog(name: string, description: string): void {
     this.dialog.open(MovieGenreComponent, {
       data: { name, description },
@@ -45,6 +53,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
   
+  /**
+   * opens modal to view director info
+   * @param directorName director name
+   * @param directorBio director biography
+   * @param directorBirth director birthday
+   */
   openDirectorViewDialog(name: string, bio: string, birthYear: number, deathYear: number): void {
     this.dialog.open(MovieDirectorComponent, {
       data: { name, bio, birthYear, deathYear },
@@ -52,34 +66,24 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * opens modal to view synopsis info
+   * @param movieDescription synopsis text
+   */
   openSummaryViewDialog(title: string, description: string): void {
     this.dialog.open(MovieSummaryComponent, {
       data: { title, description },
       width: '500px'
     });
   }
-  
-  addToFavs(_id: string): any {
-    this.fetchApiData.addFavMovie(_id).subscribe((response: any) => {
-      this.snackBar.open('Added to favorites.', 'OK', {
-        duration: 3000
-      });
-      return this.getUsersFavs();
-    });
-  }
 
-  removeFromFavs(_id: string): void {
-    this.fetchApiData.deleteUserFavMovie(_id).subscribe((response: any) => {
-      this.snackBar.open('Removed from favorites', 'OK', {
-        duration: 3000,
-      });
-      return this.getUsersFavs();
-    })
-  }
-
+  /**
+   * fetches list of favorites
+   * @returns array of ids of favorited movies
+   */
   getUsersFavs(): void {
     this.fetchApiData.getUser().subscribe((response: any) => {
-      this.favs = response.Favorites;
+      this.favs = response.FavoriteMovies;
       return this.favs
     })
   }
