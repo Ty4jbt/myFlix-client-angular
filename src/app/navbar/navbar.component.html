@@ -2,10 +2,10 @@
 
 <mat-toolbar class="navbar">
     <span class="logo">myFlix</span>
-    <button mat-button routerlink="/movies">
+    <button mat-button (click)="onMovieClick()" routerlink="/movies">
         Movies
     </button>
-    <button mat-button routerlink="/profile">
+    <button mat-button (click)="onProfileClick()" routerlink="/profile">
         Profile
     </button>
     <span class="flexExpand"></span>

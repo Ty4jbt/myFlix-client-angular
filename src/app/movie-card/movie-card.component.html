@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <app-navbar></app-navbar>
-<div style="display: flex;">
-    <mat-card *ngfor="let movie of movies;" style="flex: 1 1 auto;">
+<div style="display: flex; flex-wrap: wrap;">
+    <mat-card *ngFor="let movie of movies;" style=" margin: 20px;">
 
         <mat-card-title class="movie-title">{{movie.Title}}</mat-card-title>
         <mat-card-subtitle class="movie-subtitle">Directed by: {{movie.Director.Name}}</mat-card-subtitle>
-        <img height="300px" src="{{movie.ImagePath}}" alt="{{movie.Title}}" />
+        <img height="300px" src="../../assets/img/{{movie.ImagePath}}" alt="{{movie.Title}}" />
         <mat-card-actions>
             <button mat-button color="primary" (click)="openGenreViewDialog(movie.Genre.Name, movie.Genre.Description)">
                 Genre
@@ -16,11 +16,13 @@
                 Director
             </button>
             <button mat-button color="primary" (click)="openSummaryViewDialog(movie.Title, movie.Description)">
-                Synopsis
+                Summary
             </button>
-            <button mat-button alt="Add movie to your favorites" (click)="addMoviesToFavs(movie._id)">
-                <mat-icon>favorite_border
-                </mat-icon>
+            <button mat-icon-button color="accent" aria-label="icon of a star" (click)="toggleFav(movie._id)">
+                <mat-icon>
+                    <span *ngIf="isFav(movie._id); else elseBlock">favorite</span>
+                    <ng-template #elseBlock>favorite_border</ng-template>
+                  </mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>

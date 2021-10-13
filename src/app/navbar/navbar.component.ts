@@ -18,12 +18,29 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * routes to profile page
+   */
+   onProfileClick(): void {
+    this.router.navigate(['profile']);
+  }
+
+  /**
+   * logs user out and routes to welcome page
+   */
   logoutUser(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);
     this.snackBar.open("You've been logged out", "OK", {
       duration: 2000,
     });
+  }
+
+  /**
+   * routes to movies page
+   */
+   onMovieClick(): void {
+    this.router.navigate(['movies'])
   }
 
 }
